@@ -1,0 +1,17 @@
+<div class="card flex">
+  <div>
+    <label>
+      {{ response.question.title }}
+    </label>
+  </div>
+  <div class="options">
+    <div class="option" *ngFor="let option of options">
+      <div class="checkbox" [ngClass]="{'selected': option.selected == true}">
+        <div class="dot"></div>
+      </div>
+      <label class="option-description">
+        {{ option.description }}
+      </label>
+    </div>
+  </div>
+</div>

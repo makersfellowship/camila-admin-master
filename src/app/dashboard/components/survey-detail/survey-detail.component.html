@@ -1,0 +1,34 @@
+<div class="title">
+  <label>{{ surveyTemplate.name || 'Responses' }}</label>
+</div>
+<div class="top-menu">
+  <div class="active">
+    CANDIDATES
+  </div>
+  <div class="disable">
+    EDIT SURVEY
+  </div>
+</div>
+
+<div class="item-container">
+  <div class="item" *ngFor="let response of responses" (click)="onViewResponse({ surveyId: response._id })">
+    <div class="item-title">
+      <label>
+        {{ response?.candidate?.firstName }} {{ response?.candidate?.lastName }}
+      </label>
+      <label class="status">
+        {{ response?.totalCompleted }}/{{ response?.totalReferences}}
+      </label>
+      <!-- <img src="./assets/svgs/dowload.svg"> -->
+    </div>
+    <div class="item-icons">
+      <img src="./assets/svgs/linkedin.svg">
+      <img src="./assets/svgs/whatsapp.svg">
+      <div class="item-info">
+        <label>
+          {{ response?.candidate?.email }}
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+.main {
+  padding: 46px 44px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .title {
+    display: inline-block;
+    label {
+      font-family: "Lemon milk";
+      font-size: 32px;
+      font-weight: 500;
+    }
+  }
+  .aling-right {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    label {
+      color: var(--label-secondary-color);
+      cursor: pointer;
+    }
+    .circle-user {
+      width: 53px;
+      height: 53px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100px;
+      background: var(--label-primary-color);
+      img {
+        height: 37px;
+      }
+    }
+    .display {
+      display: flex;
+      flex-direction: column;
+      margin: 0 0 0 8px;
+      .profile {
+        font-weight: 600;
+        font-size: 20px;
+        z-index: 5;
+      }
+      .line {
+        position: absolute;
+        margin: 18px 0 0;
+      }
+    }
+  }
+}
+.actions {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  label {
+    cursor: pointer;
+    font-family: "Avenir Next";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    color: #052a35;
+  }
+}

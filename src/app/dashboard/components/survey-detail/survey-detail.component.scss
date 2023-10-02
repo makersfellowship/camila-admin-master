@@ -1,0 +1,85 @@
+.title {
+  display: inline-block;
+  label {
+    font-family: "Lemon milk";
+    font-size: 22px;
+    font-weight: 500;
+  }
+}
+.top-menu {
+  display: flex;
+  gap: 10px;
+  padding: 20px 0;
+  .active {
+    padding: 10px 20px;
+    font-family: "LEMON MILK";
+    color: #fff;
+    cursor: pointer;
+    background: #f24c7a;
+    border-radius: 10px;
+  }
+  .disable {
+    padding: 10px 20px;
+    font-family: "LEMON MILK";
+    color: #fff;
+    cursor: pointer;
+    background: #d9d9d9;
+    border-radius: 10px;
+  }
+  label {
+    cursor: pointer;
+  }
+}
+
+.item-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 29px;
+  max-height: 84vh;
+  padding: 0 0 20px;
+  overflow-y: scroll;
+}
+
+.item {
+  width: 38%;
+  display: flex;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 23px;
+  padding: 21px 24px 21px 35px;
+  justify-content: space-between;
+  flex-direction: column;
+  cursor: pointer;
+  label {
+    cursor: pointer;
+  }
+  .item-title {
+    display: flex;
+    justify-content: space-between;
+    font-family: "LEMON MILK";
+    font-size: 16px;
+    gap: 10px;
+    font-weight: bold;
+    align-items: center;
+    color: #052a35;
+    padding-bottom: 10px;
+  }
+  .item-icons {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+  .item-info {
+    font-family: "Avenir Next";
+    font-size: 15px;
+    line-height: 20px;
+    color: #052a35;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.status {
+  color: #f24c7a;
+}

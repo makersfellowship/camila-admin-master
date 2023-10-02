@@ -1,0 +1,27 @@
+@mixin button-action($color: white, $bg: #FF790B) {
+    padding: 9px 15px;
+    text-transform: uppercase;
+    color: $color;
+    background: $bg;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-family: "Lemon milk";
+}
+
+.btn-style {
+    @include button-action(white, #F24C7A);
+    transition: all 0.3s;
+    min-width: 150px;
+
+    &:hover {
+        box-shadow: 0px 5px 15px -5px rgba(242, 76, 122, 0.3);
+        transform: scale(1.03);
+    }
+
+    &:active {
+        box-shadow: 0px 4px 10px rgba(242, 76, 122, 0.3);
+        transform: scale(0.98);
+    }
+}

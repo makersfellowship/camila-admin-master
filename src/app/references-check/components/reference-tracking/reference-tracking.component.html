@@ -1,0 +1,15 @@
+<div class="references-information">
+  <div class="card reference-card" *ngFor="let reference of references">
+    <div class="top">
+      <label class="name">{{ reference.evaluator.firstName }} {{ reference.evaluator.lastName }}</label>
+    </div>
+    <div class="mid">
+      <img
+        src="{{ reference.status == 'Completed' ? '/assets/svgs/draw-red-dot-on.svg' : './assets/svgs/draw-dot-off.svg'}}">
+      <label>{{ reference.status }}</label>
+    </div>
+    <div class="bottom">
+      <!-- <label class="sent">Survey sent 3 days ago</label> -->
+    </div>
+  </div>
+</div>

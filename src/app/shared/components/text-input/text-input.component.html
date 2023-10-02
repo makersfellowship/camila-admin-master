@@ -1,0 +1,11 @@
+<div class="input">
+  <label for="input-text-{{inputId}}">{{label}}</label>
+  <ng-container *ngTemplateOutlet="type !== 'box' ? text : box"></ng-container>
+</div>
+
+<ng-template #text>
+  <input type="text" name="input-text-{{inputId}}" id="" [(ngModel)]="result" (keyup)="onResponse({ result: result})">
+</ng-template>
+<ng-template #box>
+  <textarea name="input-text-{{inputId}}" [(ngModel)]="result" (keyup)="onResponse({ result: result})"></textarea>
+</ng-template>

@@ -1,0 +1,35 @@
+.modal-background {
+  height: 100%;
+  position: fixed;
+  background: #c4c4c473;
+  top: 0px;
+  z-index: 30;
+  width: 100%;
+  .contenerdor-mensaje {
+    z-index: 30;
+    background: var(--background-primary);
+    position: relative;
+    width: fit-content;
+    min-height: 100px;
+    margin: 18vh auto;
+    padding: 28px;
+    border-radius: 7px;
+    text-align: center;
+    .title {
+      text-align: center;
+      label {
+        color: var(--label-primary-color);
+        font-size: 20px;
+        font-weight: 600;
+      }
+    }
+    img {
+      height: 100px;
+      margin: 20px auto 0;
+      display: block;
+    }
+    .margin {
+      margin: 20px 0 0 0;
+    }
+  }
+}

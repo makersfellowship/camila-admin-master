@@ -1,0 +1,66 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate">
+</ngx-loading>
+<div class="bg">
+  <app-header-main></app-header-main>
+  <ng-container
+    *ngTemplateOutlet="submit ? succesPage : evaluatorEmail ? surveyEvaluator  : candidateEncodeId ? referenceTracking : survey">
+  </ng-container>
+</div>
+
+<ng-template #survey>
+  <div class="overPosition">
+    <app-title [survey]="surveyConfig"></app-title>
+    <app-custom-stepper [step]="view"></app-custom-stepper>
+    <app-contact-info *ngIf="view === 'Contact information'"
+      (nextStep)="this.candidate = $event; view = 'Your references'"></app-contact-info>
+    <app-form-add-references *ngIf="view === 'Your references'" [survey]="surveyConfig"
+      (nextStep)="this.references = $event; view = 'Additional questions'"></app-form-add-references>
+    <app-form-questions [questions]="questions" *ngIf="view === 'Additional questions'"
+      (nextStep)="onSubmitSurveyCandidate()"></app-form-questions>
+  </div>
+  <img *ngIf="!submit" class="bg-image" src="./assets/svgs/draw-dot-gradient.svg" alt="draw background">
+  <img *ngIf="!submit" class="bg-image-bottom" src="./assets/svgs/draw-dot-gradient-right.svg" alt="draw background">
+</ng-template>
+
+<ng-template #surveyEvaluator>
+  <div class="overPosition">
+    <app-title [survey]="surveyConfig"></app-title>
+    <app-custom-stepper-reference [step]="view"></app-custom-stepper-reference>
+    <app-evaluator-info *ngIf="view === 'Evaluator information'" [evaluator]="evaluator"
+      (nextStep)="this.evaluator = $event; onConfirmEvaluatorInformatio();"></app-evaluator-info>
+    <app-form-questions-reference [questions]="questions" *ngIf="view === 'Candidate information'"
+      (nextStep)="onSubmitSurveyEvaluator()"></app-form-questions-reference>
+  </div>
+  <img *ngIf="!submit" class="bg-image" src="./assets/svgs/draw-dot-gradient.svg" alt="draw background">
+  <img *ngIf="!submit" class="bg-image-bottom" src="./assets/svgs/draw-dot-gradient-right.svg" alt="draw background">
+</ng-template>
+
+<ng-template #referenceTracking>
+  <div class="overPosition">
+    <app-title [survey]="surveyConfig"></app-title>
+    <reference-tracking [references]="references"></reference-tracking>
+  </div>
+  <img *ngIf="!submit" class="bg-image" src="./assets/svgs/draw-dot-gradient.svg" alt="draw background">
+  <img *ngIf="!submit" class="bg-image-bottom" src="./assets/svgs/draw-dot-gradient-right.svg" alt="draw background">
+</ng-template>
+
+<ng-template #succesPage>
+  <div class="overPosition screen-center" *ngIf="!evaluatorEmail">
+    <h1 class="title-special">THANK YOU!</h1>
+    <p>
+      We have received your response and will be reaching out to your references in short!
+    </p>
+    <p>You can check the status of your reference check <a href="{{trackReferenceLink}}" target="_blank">here</a>.</p>
+  </div>
+  <div class="overPosition screen-center" *ngIf="evaluatorEmail">
+    <h1 class="title-special">THANK YOU!</h1>
+    <div>
+      <p>
+        We have received your response.
+      </p>
+      <p>If you have any questions about this process feel free to reach out to us anytime!</p>
+    </div>
+    <a href="mailto:team@camila.buid" target="_blank" rel="noopener noreferrer">team@camila.buid</a>
+  </div>
+  <img class="airplane-img" src="./assets/svgs/paper-plane.svg" alt="paper airplane">
+</ng-template>

@@ -1,0 +1,28 @@
+<div class="header">
+  <label class="title">{{ response.survey.surveyTemplate.name }}</label>
+  <label class="description">{{ candidate.firstName }} {{ candidate.lastName }}</label>
+</div>
+<div class="top-menu">
+  <div [ngClass]="{'active': menu == 'Response', 'disable': menu != 'Response'}"
+    (click)="onChangeMenu({ option: 'Response' })">
+    RESPONSE
+  </div>
+  <div [ngClass]="{'active': menu == 'References', 'disable': menu != 'References'}"
+    (click)="onChangeMenu({ option: 'References' })">
+    REFERENCES
+  </div>
+  <div class="active" (click)="onOpenReport()">
+    Download report
+  </div>
+</div>
+
+<div *ngIf="menu == 'Response'">
+  <app-candidate-response [references]="references" [candidate]="candidate"></app-candidate-response>
+  <div class="container-candidate-responses">
+    <label class="title">Additional questions</label>
+    <app-response-detail [responses]="candidateResponses"></app-response-detail>
+  </div>
+</div>
+<div *ngIf="menu == 'References'">
+  <app-reference-response [references]="references"></app-reference-response>
+</div>

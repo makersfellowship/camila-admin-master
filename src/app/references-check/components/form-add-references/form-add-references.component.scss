@@ -1,0 +1,192 @@
+.bg {
+  background-color: #f5f5f2;
+  min-height: 100vh;
+  //padding-bottom: 90px;
+}
+
+.form-container {
+  background-color: white;
+  width: 54vw;
+  margin: 0 auto;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 23px;
+  padding: 15px 40px 40px;
+}
+
+.container-scroll {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  h2 {
+    text-align: center;
+  }
+}
+
+.form-title {
+  color: #052a35;
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: 32px;
+  margin: 0;
+  font-family: "LEMON MILK";
+}
+
+.form-description {
+  margin: 0;
+  margin-top: 13px;
+  text-align: center;
+  color: #052a35;
+  font-size: 15px;
+}
+
+.alert-message {
+  display: flex;
+  column-gap: 12px;
+  border: 2px solid #f24c7a;
+  border-radius: 23px;
+  width: 90%;
+  align-items: center;
+  padding: 10px 16px;
+  margin-top: 20px;
+  box-sizing: border-box;
+  img {
+    width: 26px;
+  }
+}
+
+// Thank you template
+.title-special {
+  text-transform: uppercase;
+  color: #f24c7a;
+  font-size: 32px;
+  font-family: "LEMON MILK";
+
+  & ~ p {
+    margin: 0;
+    font-size: 20px;
+    line-height: 27px;
+    width: 54vw;
+    margin-top: 5px;
+  }
+}
+
+.screen-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.airplane-img {
+  position: fixed;
+  bottom: 0%;
+  right: 0%;
+}
+
+.references-button {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0 0;
+  .delete-action {
+    padding: 9px 15px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: #ff3636db;
+    font-size: 13px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-family: "Lemon milk";
+  }
+  .button-action {
+    padding: 9px 15px;
+    text-transform: uppercase;
+    color: #ffffff;
+    background: #ff790b;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-family: "Lemon milk";
+    font-size: 13px;
+  }
+}
+
+.information {
+  display: flex;
+  flex-wrap: wrap;
+
+  .text-information {
+    width: 50%;
+  }
+
+  .text-information-full {
+    width: 100%;
+  }
+}
+.input-label {
+  color: var(--label-tertiary-color);
+  font-family: "Avenir Next";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.row-button {
+  width: 54vw;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+@media (max-width: 700px) {
+  .text-information {
+    width: 100% !important;
+  }
+  .form-container {
+    width: 82vw;
+    padding: 15px 20px 20px;
+  }
+  .row-button {
+    width: 82vw;
+  }
+  .alert-message {
+    width: 100%;
+    font-size: 14px;
+  }
+  .references-button {
+    justify-content: flex-end;
+    .delete-action {
+      padding: 0px 14px;
+      font-size: 20px;
+    }
+    .button-action {
+      padding: 0px 12px;
+      font-size: 30px;
+    }
+  }
+}
+.phone-number {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  select {
+    width: 30%;
+  }
+  input {
+    width: calc(70% - 20px);
+  }
+}
+
+.reference-label {
+  color: #f24c7a;
+  font-size: 24px;
+}

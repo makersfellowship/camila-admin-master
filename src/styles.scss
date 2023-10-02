@@ -1,0 +1,264 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "Avenir Next";
+  src: url("assets/fonts/AvenirNextLTPro-Bold.otf");
+  src: url("assets/fonts/AvenirNextLTPro-Regular.otf");
+}
+@font-face {
+  font-family: "Lemon milk";
+  src: url("assets/fonts/LEMONMILK-Bold.otf");
+  src: url("assets/fonts/LEMONMILK-Light.otf");
+  src: url("assets/fonts/LEMONMILK-Medium.otf");
+  src: url("assets/fonts/LEMONMILK-Regular.otf");
+}
+$font: "Avenir Next" !important;
+$font-regular: "Avenir Next, Regular" !important;
+
+// Vars of colors to sendary step of development... maybe light mode
+:root {
+  --background-primary: #f4f4f4;
+  --background-secondary: #ffffff;
+  --background-tertiary: #1e252f;
+  --layout-options-color: #2c333e;
+  --input-color: #f4f4f4;
+  --button-color: #052a35;
+  --label-primary-color: #ff790b;
+  --label-secondary-color: #1e252f;
+  --label-tertiary-color: #052a35;
+  --label-quaternary-color: #b5b5b5;
+  --label-table-desc-color: #a8a8a8d9;
+  --boder-color: #c4c4c4;
+}
+
+//Set some global settings
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Avenir Next";
+}
+.input-password {
+  display: flex;
+  background: var(--input-color);
+  border-radius: 10px;
+  margin: 5px 0 0;
+  align-items: center;
+  input {
+    display: inline;
+    background: var(--input-color);
+    padding: 13px 20px;
+    font-size: 18px !important;
+    border-radius: 10px 0 0 10px;
+    height: 50px;
+    box-sizing: border-box;
+    width: 100%;
+  }
+  img {
+    cursor: pointer;
+  }
+  .eye {
+    height: 20px;
+    padding: 0px 20px;
+  }
+  .eye-close {
+    height: 28px;
+    padding: 7px 20px 0;
+  }
+}
+.input-label {
+  color: var(--label-primary-color);
+  font-size: 18px;
+  margin: 20px 0 0;
+  font-weight: 600;
+  display: block;
+}
+.basic-input {
+  background: var(--input-color);
+  padding: 13px 20px;
+  font-size: 18px !important;
+  border-radius: 10px;
+  margin: 5px 0 0;
+  height: 50px;
+  box-sizing: border-box;
+  display: block;
+  min-width: 377px;
+}
+
+input,
+select {
+  outline: none;
+  border: none;
+  background-clip: content-box;
+}
+.basic-button {
+  text-align: center;
+  padding: 11px 35px 7px;
+  background-color: var(--button-color);
+  border-radius: 10px;
+  color: var(--background-secondary);
+  font-size: 19px;
+  box-sizing: border-box;
+  display: block;
+  font-weight: 600;
+  cursor: pointer;
+}
+.cancel-button {
+  color: var(--label-tertiary-color) !important;
+  background: transparent;
+  border: var(--label-tertiary-color) 1px solid;
+  text-align: center;
+  padding: 12px 0 11px;
+  border-radius: 10px;
+  font-size: 19px;
+  box-sizing: border-box;
+  display: block;
+  min-width: 377px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.subt-text-red {
+  color: var(--label-tertiary-color);
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  cursor: pointer;
+}
+
+.container-description-table {
+  background-color: var(--background-secondary);
+  border-radius: 10px;
+  max-width: 870px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  .stepper {
+    margin: 0 0 30px;
+  }
+  .description-table {
+    background-color: var(--layout-options-color);
+    border-radius: 10px;
+    padding: 10px 20px 20px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    .sub-desc-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--label-table-desc-color);
+      .title {
+        color: var(--label-table-desc-color);
+      }
+      .description {
+        color: var(--label-primary-color);
+      }
+    }
+    .total-desc-row {
+      padding: 10px 0 0;
+      display: flex;
+      justify-content: space-between;
+      .title {
+        color: var(--label-primary-color);
+      }
+      .second-title {
+        color: var(--label-table-desc-color);
+      }
+      .description {
+        color: var(--label-primary-color);
+      }
+    }
+  }
+  .footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 20px 0 0;
+    div {
+      font-size: 18px;
+      min-width: min-content;
+      padding: 10px 30px;
+    }
+  }
+}
+
+.card {
+  margin: 20px 0 0;
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 23px;
+  padding: 23px;
+}
+
+select * {
+  color: white;
+  background-color: var(--layout-options-color);
+}
+
+::-webkit-scrollbar {
+  display: none !important;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.textarea,
+.textarea-validation {
+  background: #f4f4f4;
+  border-radius: 9px;
+  border: none;
+  height: 49px;
+  padding: 10px;
+  width: calc(100% - 10px);
+  margin-top: 10px;
+  box-sizing: border-box;
+  resize: none;
+  font-family: "Avenir Next";
+  font-size: 15px;
+
+  &:focus {
+    border: 2px solid #f24c7a;
+  }
+  &-validation {
+    border: 2px solid #f24c7a;
+  }
+}
+
+.container-tel-input,
+.container-tel-input-validation {
+  background: #f4f4f4;
+  border-radius: 9px;
+  border: none;
+  height: 49px;
+  width: calc(100% - 10px);
+  margin-top: 10px;
+  box-sizing: border-box;
+
+  .iti--allow-dropdown {
+    width: calc(100% - 20px);
+    padding: 14px 10px;
+    .iti__flag-container {
+      padding: 6px 6px 9px;
+    }
+    input {
+      padding-left: 48px;
+      resize: none;
+      background: none;
+      font-family: "Avenir Next";
+      font-size: 16px;
+      width: 100%;
+    }
+  }
+  &:focus {
+    border: 2px solid #f24c7a;
+  }
+  &-validation {
+    border: 2px solid #f24c7a;
+  }
+}
+
+.alert-validation {
+  color: #f24c7a;
+  font-size: 12px;
+}

@@ -1,0 +1,59 @@
+.container-background {
+  background-color: var(--background-primary);
+  height: 100vh;
+  overflow: hidden;
+}
+
+.container-main {
+}
+
+.container-interative {
+  padding: 0 60px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  .show-component {
+    margin: 0 auto;
+    max-width: 514px;
+    z-index: 2;
+  }
+}
+.background-img {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.login-info {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  .logo {
+    height: 70px;
+    width: 145px;
+  }
+  .header {
+    margin: 116px 0 0;
+    max-width: 440px;
+    label {
+      font-family: "LEMON MILK";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 48px;
+      color: #f24c7a;
+    }
+  }
+  .body {
+    margin: 56px 0 0;
+    display: flex;
+    flex-direction: column;
+    label {
+      font-family: "LEMON MILK";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 40px;
+      color: #052a35;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+<div class="container-main">
+  <label class="input-label">Email</label>
+  <input type="email" class="basic-input" placeholder="Enter here" [(ngModel)]="email" />
+  <label class="input-label">Password</label>
+  <div class="input-password">
+    <input [type]="inputType" placeholder="Enter here" [(ngModel)]="password" />
+    <img src="./assets/icons/eye.png" alt="eye" class="eye" *ngIf="!showPassword" (click)="onShowPassword()" />
+    <img src="./assets/icons/eye-close.png" alt="eye-close" class="eye-close" *ngIf="showPassword"
+      (click)="onShowPassword()" />
+  </div>
+  <div class="basic-button margin-button" (click)="onLogin()">LOG IN</div>
+</div>

@@ -1,0 +1,36 @@
+.input {
+  font-weight: 600;
+  width: 100%;
+  color: #052a35;
+  margin: 22px 0 0 0;
+
+  label {
+    padding-left: 2px;
+  }
+
+  input {
+    background: #f4f4f4;
+    border-radius: 9px;
+    padding: 10px;
+    width: 100%;
+  }
+
+  textarea {
+    background: #f4f4f4;
+    border-radius: 9px;
+    border: none;
+    height: 90px;
+    padding: 10px;
+    width: calc(100% - 10px);
+    margin-top: 15px;
+    box-sizing: border-box;
+    resize: none;
+    font-family: "Avenir Next";
+    font-size: 15px;
+
+    &:focus {
+      border: 2px solid #f24c7a;
+      outline: none;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<div class="stepper-container">
+  <!-- define the style of the stepper component -->
+  <div class="stepper-wrapper">
+    <!-- repeat this in a loop -->
+    <div class="stepper-item" (click)="onChangeStep({ step: 'Contact information' })"
+      [ngClass]="{'active': step == 'Contact information', 'completed': step != 'Contact information'}">
+      <div class="step-counter">1</div>
+      <div class="step-name">Contact information</div>
+    </div>
+    <div class="stepper-item" (click)="onChangeStep({ step: 'Your references' })"
+      [ngClass]="{'active': step == 'Your references', 'completed':  step == 'Additional questions' }">
+      <div class="step-counter">2</div>
+      <div class="step-name">Your references</div>
+    </div>
+    <div class="stepper-item" (click)="onChangeStep({ step: 'Additional questions' })"
+      [ngClass]="{'active': step == 'Additional questions'}">
+      <div class="step-counter">3</div>
+      <div class="step-name">Additional questions</div>
+    </div>
+  </div>
+</div>

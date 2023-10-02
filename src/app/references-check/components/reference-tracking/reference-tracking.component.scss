@@ -1,0 +1,64 @@
+.references-information {
+  width: 70vw;
+  display: flex;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  .reference-card {
+    width: 25%;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    flex-direction: column;
+    .top {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      .name {
+        font-family: "LEMON MILK";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 22px;
+        color: #052a35;
+      }
+    }
+    .mid {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      img {
+        height: 18px;
+      }
+      label {
+        font-family: "Avenir Next";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+
+        color: #052a35;
+      }
+    }
+    .bottom {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      .sent {
+        font-family: "Avenir Next";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 20px;
+        color: #052a35;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .references-information .reference-card {
+    width: 100%;
+  }
+}

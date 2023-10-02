@@ -1,0 +1,98 @@
+.title {
+  font-family: "Lemon milk";
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.container {
+  display: flex;
+  gap: 26px;
+  .references-information {
+    width: 100%;
+    .container-references {
+      height: 500px;
+      overflow-y: scroll;
+      padding: 0 0 10px;
+      .reference-card {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .left {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          .top {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            .name {
+              font-family: "LEMON MILK";
+              font-style: normal;
+              font-weight: 500;
+              font-size: 22px;
+              color: #052a35;
+            }
+          }
+          .bottom {
+            .relation {
+              font-family: "Avenir Next";
+              font-style: normal;
+              font-weight: 600;
+              font-size: 15px;
+              color: #ff790b;
+            }
+          }
+        }
+        .right {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          div {
+            display: flex;
+            justify-content: flex-end;
+          }
+          .status {
+            gap: 5px;
+            align-items: center;
+            img {
+              height: 18px;
+            }
+            label {
+              font-family: "Avenir Next";
+              font-style: normal;
+              font-weight: 500;
+              font-size: 14px;
+
+              color: #052a35;
+            }
+          }
+          .reminder {
+            font-family: "Avenir Next";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+            color: #f24c7a;
+          }
+          .sent {
+            font-family: "Avenir Next";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            line-height: 20px;
+            color: #052a35;
+          }
+        }
+      }
+    }
+  }
+}
+
+.button-response {
+  padding: 7px 20px;
+  font-family: "LEMON MILK";
+  color: #fff;
+  cursor: pointer;
+  background: #f24c7a;
+  border-radius: 10px;
+  margin: 0 0 0 25px;
+}

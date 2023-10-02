@@ -1,0 +1,17 @@
+.background-complete {
+  height: 100vh;
+  overflow: hidden;
+  background: var(--background-primary);
+}
+
+.container {
+  display: grid;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container-main {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 1fr 85vw;
+}

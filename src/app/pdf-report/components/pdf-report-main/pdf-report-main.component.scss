@@ -1,0 +1,406 @@
+.bg {
+  background: #d5d5d59c;
+  height: 100%;
+  width: 100%;
+  .container-report {
+    font-family: "LEMON MILK";
+    background: #ffffff;
+    width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    .divider {
+      width: 100%;
+      border: 1px dashed #f24c7a;
+    }
+    .item-list {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      gap: 18px;
+      padding: 16px 0;
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: "Avenir Next";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        img {
+          height: 38px;
+          width: 38px;
+        }
+        .description {
+          color: #052a35;
+        }
+        .title {
+          font-weight: 500;
+          color: #052a35;
+        }
+        .rate {
+          font-weight: 600;
+          font-size: 20px;
+          color: #ff790b;
+        }
+        .special-description {
+          color: #ff790b;
+        }
+      }
+    }
+    .tab-information {
+      background: #f24c7a;
+      border-radius: 0px 0px 25px 25px;
+      width: fit-content;
+      margin: 0 0 0 auto;
+      padding: 10px 30px;
+      text-align: center;
+      color: #fff;
+      min-width: 196px;
+    }
+    .pill-information {
+      background: #f24c7a;
+      border-radius: 25px;
+      width: fit-content;
+      // margin: 0 0 0 auto;
+      padding: 10px 30px;
+      text-align: center;
+      color: #fff;
+      min-width: 196px;
+    }
+    .information {
+      display: flex;
+      .candidate-information {
+        background: #f4f4f4;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0px 25px 25px 0px;
+        height: fit-content;
+        .padding-container {
+          padding: 10px 20px;
+          display: flex;
+          flex-direction: column;
+        }
+        .title-reference {
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          color: #d9d9d9;
+        }
+        .candidate-name {
+          font-style: normal;
+          font-weight: 400;
+          font-size: 24px;
+          color: #052a35;
+          width: 300px;
+          margin: 30px 0 20px;
+        }
+        .sub-division {
+          background: #d9d9d9;
+          width: 100%;
+          padding: 16px 0;
+          text-align: center;
+          .description {
+            margin: 0;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            color: #ffffff;
+          }
+        }
+      }
+      .evaluators-information {
+        width: 100%;
+        padding: 0 16px;
+        .evaluator-list {
+          padding: 15px 0;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+          .item {
+            justify-content: space-between;
+            display: flex;
+            align-items: center;
+            font-family: "Avenir";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            color: #052a35;
+            .info {
+              display: flex;
+              flex-direction: column;
+              .name {
+                font-family: "LEMON MILK";
+                font-weight: 400;
+                font-size: 14px;
+              }
+              .sub-title {
+                font-weight: 500;
+              }
+            }
+            .linkedin {
+              display: flex;
+              gap: 10px;
+              align-items: center;
+              label {
+                inline-size: 220px;
+                overflow-wrap: break-word;
+              }
+            }
+          }
+        }
+        .exp-list {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          .item {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            .title {
+              font-family: "LEMON MILK";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 14px;
+              color: #ff790b;
+            }
+            .description {
+              font-family: "Avenir Next";
+              font-style: normal;
+              font-weight: 500;
+              font-size: 14px;
+              color: #052a35;
+            }
+            span {
+              color: #ff790b;
+            }
+          }
+        }
+      }
+    }
+    .barometer-divider {
+      background: rgba(242, 76, 122, 0.4);
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      align-items: center;
+      padding: 14px;
+      margin: 26px 0 0;
+      .main-desc {
+        font-family: "Avenir Next";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        color: #ffffff;
+        width: 200px;
+        margin: 0 0 0 32px;
+      }
+      .scale {
+        display: flex;
+        gap: 10px;
+        .cols {
+          display: flex;
+          gap: 4px;
+          flex-direction: column;
+          justify-content: center;
+        }
+        .item {
+          width: 100%;
+          display: flex;
+          gap: 4px;
+          .number {
+            justify-content: center;
+            align-content: center;
+            display: flex;
+            padding: 2px 0 0;
+            width: 16px;
+            background: #ffffff;
+            border: 0.5px solid #d9d9d9;
+            font-family: "Avenir Next";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            color: #f24c7a;
+            border-radius: 100px;
+          }
+          .description {
+            font-family: "Avenir Next";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            color: #ffffff;
+          }
+        }
+      }
+      .pill {
+        padding: 10px;
+        background: #f4f4f4;
+        border: 0.5px solid #f24c7a;
+        border-radius: 26px;
+        display: flex;
+        .desc {
+          border-left: 1px solid #ff790b;
+          padding-left: 7px;
+          font-family: "Avenir Next";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 13px;
+          color: #000000;
+        }
+      }
+    }
+    .sof-skills-container {
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+    }
+    .description-sub-title,
+    .description-sub-title-margin {
+      font-family: "Avenir Next";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      color: #000000;
+      &-margin {
+        margin: 20px 0;
+      }
+    }
+    .container-divider {
+      display: flex;
+      gap: 30px;
+      margin: 0 0 36px;
+      .skill-list {
+        display: flex;
+        gap: 14px;
+        flex-direction: column;
+        width: 50%;
+        .item {
+          display: flex;
+          justify-content: space-between;
+          .mx-width {
+            width: 186px;
+          }
+          .bar-bg {
+            width: 170px;
+            height: 20px;
+            background: #d9d9d9;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            border: 1px solid #d9d9d9;
+            .point {
+              justify-content: center;
+              align-items: center;
+              display: flex;
+              width: 20px;
+              background: #ffffff;
+              border: 0.5px solid #d9d9d9;
+              font-family: "Avenir Next";
+              font-style: normal;
+              font-weight: 400;
+              font-size: 10px;
+              height: 20px;
+              color: #f24c7a;
+              margin: -1px 0 0 0;
+              border-radius: 100px;
+              z-index: 4;
+            }
+            .user-bar {
+              height: 28px;
+              width: 158px; //MAX 158PX
+              margin: -4px 0 0;
+              position: absolute;
+              border-right: 2px solid #ff790b;
+              z-index: 5;
+            }
+            .full-bar {
+              height: 20px;
+              width: 40px;
+              position: absolute;
+              background: #f24c7a;
+              border-radius: 20px;
+            }
+          }
+        }
+      }
+    }
+    .leadership-container {
+      display: flex;
+      flex-direction: column;
+      padding: 0 16px;
+      .exp-list,
+      .exp-list-full {
+        padding: 16px 0;
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        &-full {
+          width: 100%;
+        }
+        .item {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          .title {
+            font-family: "LEMON MILK";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            color: #ff790b;
+          }
+          .description {
+            font-family: "Avenir Next";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            color: #052a35;
+          }
+          span {
+            color: #ff790b;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2000;
+  padding: 18px 30px;
+  box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  .footer-img {
+    height: 50px;
+  }
+  .footer-message {
+    p {
+      margin: 5px 0;
+      text-transform: uppercase;
+      color: #f24c7a;
+      text-align: right;
+      font-weight: 500;
+      font-family: Lemon milk;
+    }
+  }
+}
+
+.download-button {
+  background: #ffffff;
+  padding: 20px;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+  cursor: pointer;
+  img {
+    height: 50px;
+  }
+}

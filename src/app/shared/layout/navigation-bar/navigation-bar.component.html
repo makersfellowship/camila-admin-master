@@ -1,0 +1,8 @@
+<div class="main">
+  <img src="./assets/general/logo.png" alt="camila-app" class="logo" />
+  <div *ngFor="let item of MENU_ITEMS" class="items-container" (click)="onSelectItem({ item: item })">
+    <img class="item-icon" [src]="activatedMenu == item.title ? item.iconOn : item.iconOff" [alt]="item.title">
+    <label [ngClass]="{'activated': activatedMenu == item.title}">{{ item.title }}</label>
+    <img *ngIf="activatedMenu == item.title" src="./assets/svgs/draw-circle-navbar.png" class="draw">
+  </div>
+</div>

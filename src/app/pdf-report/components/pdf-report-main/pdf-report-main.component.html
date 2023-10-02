@@ -1,0 +1,221 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }" [template]="customLoadingTemplate">
+</ngx-loading>
+<div class="bg">
+  <div class="container-report" id="reportpdf" #reportpdf>
+    <div class="information">
+      <div class="candidate-information">
+        <div class="padding-container">
+          <label class="title-reference">
+            REFERENCE CHECK
+          </label>
+          <label class="candidate-name">
+            {{candidate.firstName}} {{candidate.lastName}}
+          </label>
+        </div>
+        <div class="divider"></div>
+        <div class="padding-container">
+          <div class="item-list">
+            <div class="item">
+              <img src="./assets/svgs/linkedin-orange.svg" alt="">
+              <label class="description">{{ candidate.linkedin }}</label>
+            </div>
+            <div class="item">
+              <img src="./assets/svgs/mail-orange.svg" alt="">
+              <label class="description">{{ candidate.email }}</label>
+            </div>
+            <div class="item">
+              <img src="./assets/svgs/whatsapp-orange.svg" alt="">
+              <label class="description">+{{ candidate.phoneNumber }}</label>
+            </div>
+          </div>
+        </div>
+        <div class="sub-division">
+          <label class="description">
+            Performance rating
+          </label>
+        </div>
+        <div class="padding-container">
+          <div class="item-list">
+            <div class="item">
+              <label class="title">The candidate's performance in regard to peers or people at similar stages in
+                their careers is rated:</label>
+            </div>
+            <div class="item" *ngFor="let response of formatResponses.topQuestion">
+              <label class="rate">{{ response.option }}</label>
+              <label class="special-description">- {{ concatText({ array: response.response}) }}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="evaluators-information">
+        <div class="tab-information">
+          <label>Evaluators</label>
+        </div>
+        <div class="evaluator-list">
+          <div class="item" *ngFor="let reference of references">
+            <div class="info">
+              <label class="name">{{ reference.evaluator.firstName }} {{ reference.evaluator.lastName}}</label>
+              <label class="sub-title">{{ reference.relation }}</label>
+              <label class="sub-title">{{ reference.company }}</label>
+            </div>
+            <div class="linkedin">
+              <img src="./assets/svgs/linkedin.svg" alt="">
+              <label class="description">{{ reference.evaluator.linkedin }}</label>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="tab-information">
+          <label>Experience</label>
+        </div>
+        <div class="exp-list">
+          <div class="item" *ngFor="let response of formatResponses.experienceAndWorkAgain">
+            <div class="title">{{ response.evaluator }}:</div>
+            <div class="description">“{{ response.experience }}”</div>
+            <div class="description">
+              {{ response.work.start }}<span>{{ response.work.mid }}</span>{{ response.work.end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="barometer-divider">
+      <div class="main-desc">
+        The following questions are using a 1-5 scale, where:
+      </div>
+      <div class="scale">
+        <div class="cols">
+          <div class="item">
+            <div class="number">
+              <label>1</label>
+            </div>
+            <label class="description"> = Very Poor</label>
+          </div>
+          <div class="item">
+            <div class="number">
+              <label>2</label>
+            </div>
+            <label class="description"> = Poor</label>
+          </div>
+          <div class="item">
+            <div class="number">
+              <label>3</label>
+            </div>
+            <label class="description"> = Average</label>
+          </div>
+        </div>
+        <div class="cols">
+          <div class="item">
+            <div class="number">
+              <label>4</label>
+            </div>
+            <label class="description"> = Good</label>
+          </div>
+          <div class="item">
+            <div class="number">
+              <label>5</label>
+            </div>
+            <label class="description"> = Excellent</label>
+          </div>
+        </div>
+      </div>
+      <div class="pill">
+        <label class="desc">The orange line reflects the candidate’s answers.</label>
+      </div>
+    </div>
+    <div class="sof-skills-container">
+      <div class="pill-information">
+        <label>SOFT SKILLS</label>
+      </div>
+      <label class="description-sub-title-margin">The candidate’s rating in the following skills is:</label>
+      <div class="container-divider">
+        <div class="skill-list">
+          <div class="item" *ngFor="let skill of formatResponses.firstSoftSkils">
+            <label class="description-sub-title mx-width">{{ skill.description }}</label>
+            <div class="bar-bg">
+              <div class="full-bar" [ngStyle]="{'width.px' : skill.evaluatorValue }"></div>
+              <div class="user-bar" [ngStyle]="{'width.px' : skill.candidateValue }"></div>
+              <div class="point">1</div>
+              <div class="point">2</div>
+              <div class="point">3</div>
+              <div class="point">4</div>
+              <div class="point">5</div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-list">
+          <div class="item" *ngFor="let skill of formatResponses.secondSoftSkils">
+            <label class="description-sub-title mx-width">{{ skill.description }}</label>
+            <div class="bar-bg">
+              <div class="full-bar" [ngStyle]="{'width.px' : skill.evaluatorValue }"></div>
+              <div class="user-bar" [ngStyle]="{'width.px' : skill.candidateValue }"></div>
+              <div class="point">1</div>
+              <div class="point">2</div>
+              <div class="point">3</div>
+              <div class="point">4</div>
+              <div class="point">5</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="divider"></div>
+    </div>
+    <div class="leadership-container">
+      <div class="pill-information">
+        <label>leadership</label>
+      </div>
+      <div class="container-divider">
+        <div class="exp-list">
+          <div class="item">
+            <div class="title">Experience:</div>
+            <div class="description">
+              {{ formatResponses.buildTeam.hired[0] }}
+              <span>{{ formatResponses.buildTeam.hired[1] }}</span>
+              {{ formatResponses.buildTeam.hired[2] }}
+              <span>{{ formatResponses.buildTeam.hired[3] }}</span>
+              {{ formatResponses.buildTeam.hired[4] }}
+            </div>
+          </div>
+          <div class="item">
+            <div class="title">Founder potential:</div>
+            <div class="description" *ngFor="let i of formatResponses.investInThem">
+              <span>{{ i.percent }}</span>{{ i.descriptionMid }}<span>{{
+                i.option }}</span>{{ i.descriptionEnd }}
+            </div>
+          </div>
+        </div>
+        <div class="skill-list">
+          <div class="item" *ngFor="let skill of formatResponses.thirdSoftSkils">
+            <label class="description-sub-title mx-width">{{ skill.description }}</label>
+            <div class="bar-bg">
+              <div class="full-bar" [ngStyle]="{'width.px' : skill.evaluatorValue }"></div>
+              <div class="user-bar" [ngStyle]="{'width.px' : skill.candidateValue }"></div>
+              <div class="point">1</div>
+              <div class="point">2</div>
+              <div class="point">3</div>
+              <div class="point">4</div>
+              <div class="point">5</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="exp-list-full">
+        <div class="item">
+          <div class="title">How would the candidate build a team?</div>
+          <div class="description">“{{ formatResponses.buildTeam.scratch }}”
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <img class="footer-img" src="./assets/general/logo.png" alt="camila logo">
+      <div class="footer-message">
+        <p>Welcome to the future of HR.</p>
+        <p>Smart, Fast & Easy.</p>
+      </div>
+    </div>
+  </div>
+  <div class="download-button" (click)="onDownloadReport()">
+    <img src="./assets/svgs/download-icon.svg">
+  </div>
+</div>

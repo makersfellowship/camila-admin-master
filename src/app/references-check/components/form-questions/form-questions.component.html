@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="form-container">
+    <div class="container-scroll">
+
+      <h2 class="form-title">ADDITIONAL QUESTIONS</h2>
+      <p class="form-description">These are a few questions the recruiting team has for you!</p>
+      <div *ngFor="let question of questions; let i = index" class="question">
+        <app-radio-group class="w-full" [question]="question" *ngIf="question.questionType == 'single-option'"
+          (answer)="assignResponse({ response: $event, index: i })">
+        </app-radio-group>
+        <app-multiple-option [question]="question" *ngIf="question.questionType == 'multiple-option'" class="w-full"
+          (answer)="assignResponse({ response: $event, index: i })">
+        </app-multiple-option>
+        <app-matrix-question [question]="question" *ngIf="question.questionType == 'matrix'" class="w-full"
+          (answer)="assignResponse({ response: $event, index: i })">
+        </app-matrix-question>
+        <app-text-input [label]="question.title" type="box" *ngIf="question.questionType == 'text'"
+          (answer)="assignResponse({ response: $event, index: i })">
+        </app-text-input>
+      </div>
+    </div>
+  </div>
+  <div class="row-button">
+    <app-dynamic-form class="button" (click)="onNextStep()" text="SEND"></app-dynamic-form>
+  </div>
+</div>

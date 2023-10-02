@@ -1,0 +1,16 @@
+<div class="modal-background">
+  <div class="contenerdor-mensaje">
+    <div class="title">
+      <label>
+        Not possible to complete this action
+      </label>
+    </div>
+    <div>
+      <img src="./assets/icons/error-icon.png" alt="success-icon">
+      <label class="input-label">{{ error?.msg }}</label>
+      <div class="basic-button margin" (click)="onClose()">
+        Done
+      </div>
+    </div>
+  </div>
+</div>

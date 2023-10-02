@@ -1,0 +1,16 @@
+.flex {
+  display: flex;
+  padding: 30px 40px;
+  flex-direction: column;
+  label {
+    font-family: "Avenir Next";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    color: #000;
+  }
+  .basic-input {
+    margin: 20px 0 0;
+    height: fit-content;
+  }
+}

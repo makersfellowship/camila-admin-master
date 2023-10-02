@@ -1,0 +1,21 @@
+<header class="header">
+  <div class="main">
+    <div class="title" *ngIf="title">
+      <label>{{ title }}</label>
+    </div>
+    <div class="actions" *ngIf="action" (click)="onChangeView()">
+      <img src="./assets/svgs/arrow-back.svg">
+      <label>Back to {{ action }}</label>
+    </div>
+    <div class="aling-right" (click)="onGoToProfile()">
+      <div class="circle-user">
+        <img src="./assets/svgs/user.svg" alt="camila-profile" />
+      </div>
+      <div class="display">
+        <label class="profile">{{ user.firstName }}</label>
+        <img src="./assets/svgs/draw-line.svg" class="line">
+        <label class="company">{{ company.name }}</label>
+      </div>
+    </div>
+  </div>
+</header>

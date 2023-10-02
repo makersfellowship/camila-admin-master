@@ -1,0 +1,30 @@
+.container-main {
+  background-color: var(--background-secondary);
+  padding: 35px 30px;
+  display: grid;
+  width: 38vw;
+  /* Note: backdrop-filter has minimal browser support */
+  background: #ffffff;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 23px;
+  .logo {
+    width: 46%;
+    margin: 0 auto 20px;
+  }
+  .margin-red-label {
+    margin: 30px auto 0;
+  }
+  .margin-button {
+    margin: 30px auto 0;
+    background: #ff790b;
+    border-radius: 10px;
+    width: fit-content;
+  }
+  .input-label {
+    font-family: "LEMON MILK";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    color: #052a35;
+  }
+}

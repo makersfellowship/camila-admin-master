@@ -1,0 +1,73 @@
+.main {
+  padding: 0 44px;
+  overflow-y: scroll;
+  height: 80vh;
+  .header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .conatiner-title {
+      .title {
+        color: var(--label-primary-color);
+        font-size: 25px;
+      }
+    }
+    .button-right {
+      div {
+        width: 130px;
+        min-width: 130px;
+        font-size: 18px;
+      }
+    }
+  }
+  .body {
+    margin: 30px 0;
+    .sub-title {
+      color: var(--label-primary-color);
+      font-size: 20px;
+    }
+    .crypto-info {
+      margin: 20px 0 0 0;
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      @media (max-width: 1100px) {
+        .col-left {
+          width: 35%;
+          height: 40vh;
+        }
+      }
+      @media (min-width: 1110px) {
+        .col-left {
+          width: 35%;
+          height: 50vh;
+        }
+      }
+      @media (min-width: 1750px) {
+        .col-left {
+          width: 35%;
+          height: 60vh;
+        }
+      }
+      .card-container {
+        width: 32%;
+        .template-card {
+          cursor: pointer;
+          display: flex;
+          margin: 0 0 20px 0;
+          padding: 20px;
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+          border-radius: 23px;
+          background: var(--background-secondary);
+          justify-content: center;
+          align-items: center;
+          height: 279px;
+          flex-direction: column;
+          box-sizing: border-box;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}

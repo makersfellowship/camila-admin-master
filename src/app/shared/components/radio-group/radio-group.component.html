@@ -1,0 +1,9 @@
+<p>{{question.title}}</p>
+<form>
+  <div class="radio-group">
+    <label class="radio" *ngFor="let option of question.options">
+      <input type="radio" name="{{formName}}" id="" (click)="onSelect({ option: option})">
+      <span>{{option}}</span>
+    </label>
+  </div>
+</form>

@@ -1,0 +1,7 @@
+<p>{{question.title}}</p>
+<div class="multiple-option-container">
+  <div *ngFor="let option of options; let i = index" (click)="updateActiveState(i)" class="option"
+    [class.active]="option.active">
+    {{option.label}}
+  </div>
+</div>

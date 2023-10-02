@@ -1,0 +1,99 @@
+<div class="container">
+
+
+  <div class="form-container">
+    <div class="container-scroll">
+      <h2 class="form-title">YOUR REFERENCES</h2>
+      <p class="form-description">Give us your references contact info so we can get in touch with them</p>
+      <!-- <div class="alert-message"><img src="./assets/svgs/icon_alert_circle.svg" alt="alert icon">
+        You need a minimum of {{survey.minNumberReferences}} references and a maximum of {{survey.maxNumberReferences}}!
+      </div> -->
+      <div *ngFor="let reference of references; let i = index">
+        <label class="input-label reference-label">Reference {{ i + 1 }}</label>
+        <div class="information">
+          <div class="text-information">
+            <label class="input-label">Name</label>
+            <input type="text" [class]="submit && reference.firstName == '' ? 'textarea-validation' : 'textarea'"
+              placeholder="Enter here" [(ngModel)]="reference.firstName" />
+            <span *ngIf="submit && reference.firstName == ''" class="alert-validation">Please fill out this
+              field.</span>
+          </div>
+          <div class="text-information">
+            <label class="input-label">Last Name</label>
+            <input type="text" [class]="submit && reference.lastName == '' ? 'textarea-validation' : 'textarea'"
+              placeholder="Enter here" [(ngModel)]="reference.lastName" />
+            <span *ngIf="submit && reference.lastName == ''" class="alert-validation">Please fill out this field.</span>
+          </div>
+          <div class="text-information">
+            <label class="input-label">Phone Number</label>
+            <div
+              [class]="submit && (reference.phoneNumber == '') ? 'container-tel-input-validation' : 'container-tel-input'">
+              <input ng2TelInput [ng2TelInputOptions]="{ initialCountry: ''}" name="tel" placeholder="260 824 2203"
+                (keyup)="onValidatePhone(i); setFormatNumber(i)" (countryChange)="onChangeCountry($event, i)"
+                (ng2TelOutput)="setFormatNumber(i)" (intlTelInputObject)="telInputObject($event, i)"
+                [(ngModel)]="reference.viewPhoneNumber" autocomplete="off" />
+            </div>
+            <span *ngIf="submit && reference.viewPhoneNumber == ''" class="alert-validation">Please fill out this
+              field.</span>
+          </div>
+          <div class="text-information">
+            <label class="input-label">Email</label>
+            <input type="email" [class]="submit && reference.email == '' ? 'textarea-validation' : 'textarea'"
+              placeholder="Enter here" [(ngModel)]="reference.email" (change)="validateEmail(reference)" />
+            <span *ngIf="submit && reference.email == ''" class="alert-validation">Please fill out this field.</span>
+            <span *ngIf="!reference.emailValidation" class="alert-validation">Wrong format, example
+              Joel@domain.com</span>
+          </div>
+          <div class="text-information-full">
+            <label class="input-label">LinkedIn</label>
+            <input type="text"
+              [class]="submit && (reference.linkedin == '' ||  !validateLinkedin(reference.linkedin)) ? 'textarea-validation' : 'textarea'"
+              placeholder="Enter here" [(ngModel)]="reference.linkedin" />
+            <span *ngIf="submit && reference.linkedin == ''" class="alert-validation">Please fill out this field.</span>
+            <span *ngIf="submit && reference.linkedin != '' && !validateLinkedin(reference.linkedin)"
+              class="alert-validation">Wrong
+              format,
+              example:
+              www.linkedin.com/in/Joel</span>
+          </div>
+          <div class="text-information-full">
+            <label class="input-label">Company or Institution name where you worked together</label>
+            <input type="text" [class]="submit && reference.company == '' ? 'textarea-validation' : 'textarea'"
+              placeholder="Enter here" [(ngModel)]="reference.company" />
+
+            <span *ngIf="submit && reference.company == ''" class="alert-validation">Please fill out this field.</span>
+          </div>
+          <div class="text-information-full">
+            <label class="input-label">Their job title when you worked together</label>
+            <input type="text" [class]="submit && reference.position == '' ? 'textarea-validation' : 'textarea'"
+              placeholder="Enter here" [(ngModel)]="reference.position" />
+
+            <span *ngIf="submit && reference.position == ''" class="alert-validation">Please fill out this field.</span>
+          </div>
+        </div>
+        <app-radio-group class="w-full" [question]="referenceType" (answer)="reference.relation = $event">
+        </app-radio-group>
+        <span *ngIf="submit && reference.relation == ''" class="alert-validation">Please fill out this field.</span>
+
+      </div>
+      <div class="references-button" *ngIf="!mobile">
+        <button class="delete-action" (click)="onDeleteReference()"
+          *ngIf="references.length > survey.minNumberReferences">
+          DELETE REFERENCE
+        </button>
+        <button class="button-action" (click)="onAddReference()" *ngIf="references.length < survey.maxNumberReferences">
+          ADD ANOTHER REFERENCES
+        </button>
+      </div>
+      <div class="references-button" *ngIf="mobile">
+        <button class="delete-action" (click)="onDeleteReference()"
+          *ngIf="references.length > survey.minNumberReferences">&#10005;</button>
+        <button class="button-action" (click)="onAddReference()"
+          *ngIf="references.length < survey.maxNumberReferences">&#43;</button>
+      </div>
+    </div>
+  </div>
+  <div class="row-button">
+    <app-dynamic-form class="button" (click)="onNextStep()" text="NEXT"></app-dynamic-form>
+  </div>
+</div>

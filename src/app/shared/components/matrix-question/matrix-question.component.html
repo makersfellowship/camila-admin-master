@@ -1,0 +1,21 @@
+<p>{{question.title}}</p>
+
+<div class="scroll-container">
+  <form>
+    <table class="matrix-container">
+      <tr>
+        <td></td>
+        <td *ngFor="let rate of question.rateScale" class="scale">{{ rate }}</td>
+      </tr>
+      <tr *ngFor="let option of options; let i = index" class="option-container">
+        <td>{{option.description}}</td>
+        <td *ngFor="let rate of question.rateScale" class="scale">
+          <label class="radio">
+            <input type="radio" [name]="option.description" id="" (click)="onSelect({ index: i, value: rate})">
+            <span></span>
+          </label>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>

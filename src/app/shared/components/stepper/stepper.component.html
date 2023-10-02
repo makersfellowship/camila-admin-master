@@ -1,0 +1,5 @@
+<div class="container-step">
+  <ul class="progressbar">
+    <li *ngFor="let step of steps" [class.active]="step.active">{{ step?.title }}</li>
+  </ul>
+</div>

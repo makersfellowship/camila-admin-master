@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="contact-information">
+    <label class="title">Contact information</label>
+    <div class="card">
+      <label class="input-label remove-margin">Name</label>
+      <input type="text" class="basic-input" placeholder="Enter here" [(ngModel)]="candidate.firstName" readonly />
+      <label class="input-label">Last Name</label>
+      <input type="text" class="basic-input" placeholder="Enter here" [(ngModel)]="candidate.lastName" readonly />
+      <label class="input-label">Phone Number</label>
+      <input type="tel" class="basic-input" placeholder="Enter here" [(ngModel)]="candidate.phoneNumber" readonly />
+      <label class="input-label">Email</label>
+      <input type="email" class="basic-input" placeholder="Enter here" [(ngModel)]="candidate.email" readonly />
+      <label class="input-label">Linkedin</label>
+      <input type="text" class="basic-input" placeholder="Enter here" [(ngModel)]="candidate.linkedin" readonly />
+    </div>
+  </div>
+  <div class="references-information">
+    <label class="title">Provided references</label>
+    <div class="container-references">
+      <div class="card reference-card" *ngFor="let reference of references">
+        <div class="left">
+          <div class="top">
+            <label class="name">{{ reference.firstName }} {{ reference.lastName }}</label>
+            <img src="./assets/svgs/linkedin.svg">
+            <img src="./assets/svgs/whatsapp.svg">
+            <img src="./assets/svgs/mail.svg">
+          </div>
+          <div class="bottom">
+            <label class="relation">
+              {{ reference.relation }}
+            </label>
+          </div>
+        </div>
+        <div class="right">
+          <div class="status">
+            <img
+              src="{{ reference.status == 'Completed' ? '/assets/svgs/draw-red-dot-on.svg' : './assets/svgs/draw-dot-off.svg'}}">
+            <label>{{ reference.status }}</label>
+          </div>
+          <div>
+            <label class="reminder" *ngIf="reference.status != 'Completed'" (click)="sendReminder(reference)">
+              Send reminder
+            </label>
+          </div>
+          <div>
+            <label class="sent">Survey sent 3 days ago</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

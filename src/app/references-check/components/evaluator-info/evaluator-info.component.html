@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="form-container">
+    <div class="container-scroll">
+      <h2 class="form-title">Contact information</h2>
+      <p class="form-description">Hi {{evaluator.firstName}} {{evaluator.lastName}}, please confirm your information!
+      </p>
+      <div class="information">
+        <div class="text-information">
+          <label class="input-label">Name</label>
+          <input type="text" [class]="submit && evaluator.firstName == '' ? 'textarea-validation' : 'textarea'"
+            placeholder="Enter here" [(ngModel)]="evaluator.firstName" />
+          <span *ngIf="submit && evaluator.firstName == ''" class="alert-validation">Please fill out this field.</span>
+        </div>
+        <div class="text-information">
+          <label class="input-label">Last Name</label>
+          <input type="text" [class]="submit && evaluator.lastName == '' ? 'textarea-validation' : 'textarea'"
+            placeholder="Enter here" [(ngModel)]="evaluator.lastName" />
+          <span *ngIf="submit && evaluator.lastName == ''" class="alert-validation">Please fill out this field.</span>
+        </div>
+        <div class="text-information">
+          <label class="input-label">Email</label>
+          <input type="text" [class]="submit && evaluator.email == '' ? 'textarea-validation' : 'textarea'"
+            placeholder="Enter here" [(ngModel)]="evaluator.email" (change)="validateEmail()" readonly />
+          <span *ngIf="submit && evaluator.email == ''" class="alert-validation">Please fill out this field.</span>
+          <span *ngIf="!evaluator.emailValidation" class="alert-validation">Wrong format, example:
+            Joel@domain.com</span>
+        </div>
+        <div class="text-informationtwo">
+          <div class="linkedin-label">
+            <label class="input-label">LinkedIn</label>
+            <img src="./assets/icons/Info-grey.png" class="info-icon" (click)="onOpenLinkedinUrl()">
+          </div>
+          <input type="text"
+            [class]="submit && (evaluator.linkedin == '' || !validateLinkedin()) ? 'textarea-validation' : 'textarea'"
+            placeholder="www.linkedin.com/in/your-user/" [(ngModel)]="evaluator.linkedin" />
+          <span *ngIf="submit && evaluator.linkedin == ''" class="alert-validation">Please fill out this field.</span>
+          <span *ngIf="submit && evaluator.linkedin != '' && !validateLinkedin()" class="alert-validation">Wrong format,
+            example:
+            www.linkedin.com/in/Joel</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row-button">
+    <app-dynamic-form class="button" (click)="onNextStep()" text="CONFIRM"></app-dynamic-form>
+  </div>
+</div>

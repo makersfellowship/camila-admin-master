@@ -1,0 +1,21 @@
+<ngx-loading [show]="loading" [config]="{ backdropBorderRadius: '3px' }">
+</ngx-loading>
+<div class="main">
+  <div class="body" *ngIf="view == 'Main'">
+    <div class="crypto-info">
+      <div class="card-container" *ngFor="let survey of surveys">
+        <app-survey-card [survey]="survey" (click)="onDetailSurvey({ templateId: survey._id  })">
+        </app-survey-card>
+      </div>
+      <!-- <div class="card-container">
+        <div class="template-card">
+          <img src="./assets/svgs/plus.svg" alt="">
+          <label>Create a new survey</label>
+        </div>
+      </div> -->
+    </div>
+  </div>
+  <app-survey-detail *ngIf="view == 'Detail'" [responses]="responses"
+    [surveyTemplate]="survey_template"></app-survey-detail>
+  <app-survey-response *ngIf="view == 'Response'" [response]="responseDetail"></app-survey-response>
+</div>

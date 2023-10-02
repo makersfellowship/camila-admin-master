@@ -1,0 +1,44 @@
+.flex {
+  display: flex;
+  padding: 30px 40px;
+  flex-direction: column;
+  label {
+    font-family: "Avenir Next";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    color: #000;
+  }
+  .options {
+    display: flex;
+    flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px 34px;
+    margin: 30px 0 8px;
+    .option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .selected {
+        border: 1px solid #ff790b !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .dot {
+          height: 60%;
+          border-radius: 100%;
+          width: 60%;
+          background: #ff790b;
+          border: 1px solid #ff790b;
+        }
+      }
+      .checkbox {
+        height: 28px;
+        border-radius: 100%;
+        width: 28px;
+        border: 1px solid #d9d9d9;
+      }
+    }
+  }
+}

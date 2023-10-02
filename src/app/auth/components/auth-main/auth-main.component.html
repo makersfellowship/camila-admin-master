@@ -1,0 +1,27 @@
+<div class="container-background">
+  <div class="container-main">
+    <div class="container-interative">
+      <!-- Login component -->
+      <div class="login-info">
+        <img src="./assets/general/logo.png" class="logo" alt="Camila-logo">
+        <div class="header">
+          <label>Welcome to the future of HR.</label>
+        </div>
+        <div class="body">
+          <label>Hire smart.</label>
+          <label>Hire fast.</label>
+          <label>Hire easy.</label>
+        </div>
+
+      </div>
+      <app-login class="show-component" *ngIf="view == 'Login'" (redirectTo)="changeView($event)"
+        (error)="onErrorModal($event)"></app-login>
+    </div>
+    <img src="./assets/svgs/draw-big-dot.svg" class="background-img">
+  </div>
+</div>
+
+<app-modal-success [success]="successMessage" *ngIf="modalDisplay == 'Success'" (close)="modalDisplay = 'Hide'">
+</app-modal-success>
+<app-modal-error [error]="errorMessage" *ngIf="modalDisplay == 'Error'" (close)="modalDisplay = 'Hide'">
+</app-modal-error>

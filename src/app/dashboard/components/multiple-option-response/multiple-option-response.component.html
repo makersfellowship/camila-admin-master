@@ -1,0 +1,14 @@
+<div class="card flex">
+  <div>
+    <label>
+      {{ response.question.title }}
+    </label>
+  </div>
+  <div class="options">
+    <div class="option" *ngFor="let option of options">
+      <label class="option-description">
+        {{ option }}
+      </label>
+    </div>
+  </div>
+</div>

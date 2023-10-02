@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="form-container">
+    <div class="container-scroll">
+      <h2 class="form-title">Contact information</h2>
+      <p class="form-description">Give us your contact info to start!</p>
+      <div class="information">
+        <div class="text-information">
+          <label class="input-label">Name</label>
+          <input type="text" [class]="submit && candidate.firstName == '' ? 'textarea-validation' : 'textarea'"
+            placeholder="Enter here" [(ngModel)]="candidate.firstName" name="firstName" />
+          <span *ngIf="submit && candidate.firstName == ''" class="alert-validation">Please fill out this field.</span>
+        </div>
+        <div class="text-information">
+          <label class="input-label">Last Name</label>
+          <input type="text" [class]="submit && candidate.lastName == '' ? 'textarea-validation' : 'textarea'"
+            placeholder="Enter here" [(ngModel)]="candidate.lastName" name="lastName" />
+          <span *ngIf="submit && candidate.lastName == ''" class="alert-validation">Please fill out this field.</span>
+        </div>
+        <div class="text-information">
+          <label class="input-label">Phone Number</label>
+          <div
+            [class]="submit && (candidate.phoneNumber == '') ? 'container-tel-input-validation' : 'container-tel-input'">
+            <input ng2TelInput [ng2TelInputOptions]="{ initialCountry: 'co'}" name="tel" placeholder="260 824 2203"
+              (keyup)="onValidatePhone();setFormatNumber()" (countryChange)="onChangeCountry($event)"
+              (ng2TelOutput)="setFormatNumber()" (intlTelInputObject)="telInputObject($event)"
+              [(ngModel)]="candidate.viewPhoneNumber" autocomplete="on" />
+          </div>
+          <span *ngIf="submit && candidate.viewPhoneNumber == ''" class="alert-validation">Please fill out this
+            field.</span>
+        </div>
+        <div class="text-information">
+          <label class="input-label">Email</label>
+          <input type="email" [class]="submit && candidate.email == '' ? 'textarea-validation' : 'textarea'"
+            placeholder="Enter here" [(ngModel)]="candidate.email" (change)="validateEmail()" />
+          <span *ngIf="submit && candidate.email == ''" class="alert-validation">Please fill out this field.</span>
+          <span *ngIf="!candidate.emailValidation" class="alert-validation">Wrong format, example:
+            Joel@domain.com</span>
+        </div>
+        <div class="text-informationtwo">
+          <div class="linkedin-label">
+            <label class="input-label">LinkedIn</label>
+            <img src="./assets/icons/Info-grey.png" class="info-icon" (click)="onOpenLinkedinUrl()">
+          </div>
+          <input type="text"
+            [class]="submit && (candidate.linkedin == '' || !validateLinkedin()) ? 'textarea-validation' : 'textarea'"
+            placeholder="www.linkedin.com/in/your-user/" [(ngModel)]="candidate.linkedin" />
+          <span *ngIf="submit && candidate.linkedin == ''" class="alert-validation">Please fill out this field.</span>
+          <span *ngIf="submit && candidate.linkedin != '' && !validateLinkedin()" class="alert-validation">Wrong format,
+            example:
+            www.linkedin.com/in/Joel</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row-button">
+    <app-dynamic-form class="button" (click)="onNextStep()" text="NEXT"></app-dynamic-form>
+  </div>
+</div>

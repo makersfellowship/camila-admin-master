@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="references-information">
+    <div class="container-references">
+      <div *ngFor="let reference of references">
+        <div class="card reference-card">
+          <div class="left">
+            <div class="top">
+              <label class="name">{{ reference.firstName }} {{ reference.lastName }}</label>
+              <img src="./assets/svgs/linkedin.svg">
+              <img src="./assets/svgs/whatsapp.svg">
+              <img src="./assets/svgs/mail.svg">
+              <div class="button-response" *ngIf="reference.status == 'Completed'"
+                (click)="onSeeResponse({ reference: reference })">
+                {{ referenceShowResponses != reference._id ? 'SEE RESPONSE' : 'HIDE RESPONSE' }}
+              </div>
+            </div>
+            <div class="bottom">
+              <label class="relation">
+                {{ reference.relation }}
+              </label>
+            </div>
+          </div>
+          <div class="right">
+            <div class="status">
+              <img
+                src="{{ reference.status == 'Completed' ? '/assets/svgs/draw-red-dot-on.svg' : './assets/svgs/draw-dot-off.svg'}}">
+              <label>{{ reference.status }}</label>
+            </div>
+            <div>
+              <label class="reminder" *ngIf="reference.status != 'Completed'" (click)="sendReminder(reference)">Send
+                reminder</label>
+            </div>
+            <div>
+              <label class="sent">Survey sent 3 days ago</label>
+            </div>
+          </div>
+        </div>
+        <app-response-detail [responses]="responses" *ngIf="referenceShowResponses == reference._id">
+        </app-response-detail>
+      </div>
+    </div>
+  </div>
+</div>

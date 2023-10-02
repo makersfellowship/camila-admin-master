@@ -1,0 +1,7 @@
+<div *ngFor="let response of responses">
+  <app-single-option-response *ngIf="response.question.questionType == 'single-option'" [response]="response">
+  </app-single-option-response>
+  <app-multiple-option-response *ngIf="response.question.questionType == 'multiple-option'" [response]="response">
+  </app-multiple-option-response>
+  <app-text-response *ngIf="response.question.questionType == 'text'" [response]="response"></app-text-response>
+</div>

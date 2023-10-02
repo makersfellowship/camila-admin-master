@@ -1,0 +1,61 @@
+.container-step {
+  width: 100%;
+  ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 0em !important;
+    margin-block-end: 0em !important;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 0px !important;
+  }
+  .progressbar {
+    counter-reset: step;
+  }
+  .progressbar li {
+    list-style-type: none;
+    width: 33.3%;
+    float: left;
+    font-size: 12px;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    color: var(--label-primary-color);
+    z-index: 10;
+  }
+  .progressbar li:before {
+    width: 25px;
+    height: 25px;
+    content: counter(step);
+    counter-increment: step;
+    border: 1px solid var(--label-tertiary-color);
+    display: block;
+    text-align: center;
+    margin: 0 auto 6px;
+    border-radius: 50%;
+    background-color: var(--label-primary-color);
+  }
+  .progressbar li:after {
+    width: 100%;
+    height: 4px;
+    content: "";
+    position: absolute;
+    background-color: var(--label-primary-color);
+    top: 11px;
+    left: -50%;
+    z-index: -1;
+  }
+  .progressbar li:first-child:after {
+    content: none;
+  }
+  .progressbar li.active {
+    color: var(--label-tertiary-color);
+  }
+  .progressbar li.active:before {
+    background-color: var(--label-tertiary-color);
+    border-color: var(--label-tertiary-color);
+  }
+  .progressbar li.active + li:after {
+    background-color: var(--label-tertiary-color);
+  }
+}
